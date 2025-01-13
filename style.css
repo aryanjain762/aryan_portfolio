@@ -1,0 +1,357 @@
+:root {
+    --primary-color: #609EA2;
+    --secondary-color: #7DB9B6;
+    --text-color: #333;
+    --bg-color: #fff;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Top Container Styles */
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-color: #0A2F25;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.hero-title {
+    font-family: 'Sacramento', cursive;
+    font-size: 5rem;
+    color: #40916c;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #95d5b2;
+    margin-top: 1rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle span {
+    color: #ffd166;
+}
+
+.hero-landscape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: 1;
+}
+
+.hero-landscape svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-landscape {
+        height: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .hero-section {
+    background-color: #051d17;
+}
+
+.dark-mode .hero-title {
+    color: #4ead89;
+}
+
+.dark-mode .hero-subtitle {
+    color: #a8e6c3;
+}
+
+/* Profile Section */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 7%;
+    margin: 20px auto;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.intro {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-stack {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-stack span {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.skill-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #7DB9B6 0%, #609EA2 100%);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: white;
+    color: #437174;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    margin: 10% auto;
+    position: relative;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-content input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+.bottom-container {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    color: white;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    --text-color: #fff;
+    --bg-color: #233b29;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode .project-card,
+.dark-mode .skill-item,
+.dark-mode .modal-content {
+    background: #2c4c3d;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .upper-cld, .lower-cld {
+        width: 100px;
+    }
+
+    .upper-cld {
+        right: 50px;
+    }
+
+    .lower-cld {
+        left: 50px;
+    }
+}

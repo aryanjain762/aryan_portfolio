@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aryan Jain</title>
+    <!-- Keep your existing CSS links -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,500&family=Poppins:ital@1&family=Sacramento&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,500&family=Merriweather:wght@300&family=Poppins:ital@1&family=Sacramento&display=swap" />
+</head>
+<body>
+    <!-- Dark mode toggle button -->
+    <button id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Replace your existing top-container with this new hero section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">I'm Aryan.</h1>
+            <h2 class="hero-subtitle">a <span>programmer.</span></h2>
+        </div>
+        
+        <div class="hero-landscape">
+            <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background -->
+                <rect width="100%" height="100%" fill="#0A2F25"/>
+                
+                <!-- Clouds -->
+                <path d="M100,100 C120,90 150,90 170,100 C190,90 220,90 240,100 C240,110 170,110 170,100" fill="white"/>
+                <path d="M900,150 C920,140 950,140 970,150 C990,140 1020,140 1040,150 C1040,160 970,160 970,150" fill="white"/>
+                
+                <!-- Hills -->
+                <path d="M0,600 Q600,400 1200,600" fill="#40916c"/>
+                <path d="M0,600 Q600,450 1200,600" fill="#2d6a4f"/>
+                <path d="M1000,600 Q1100,500 1200,600" fill="#ffffff"/>
+                
+                <!-- Trees -->
+                <g transform="translate(300,450)">
+                    <path d="M0,20 L10,-10 L20,20 Z" fill="#95d5b2"/>
+                    <rect x="8" y="20" width="4" height="10" fill="#774936"/>
+                </g>
+                <g transform="translate(500,420)">
+                    <path d="M0,20 L10,-10 L20,20 Z" fill="#ffd166"/>
+                    <rect x="8" y="20" width="4" height="10" fill="#774936"/>
+                </g>
+                <g transform="translate(700,440)">
+                    <path d="M0,20 L10,-10 L20,20 Z" fill="#ff9f1c"/>
+                    <rect x="8" y="20" width="4" height="10" fill="#774936"/>
+                </g>
+                
+                <!-- Houses -->
+                <g transform="translate(400,430)">
+                    <rect x="0" y="0" width="20" height="20" fill="#606c38"/>
+                    <path d="M0,0 L10,-10 L20,0 Z" fill="#bc6c25"/>
+                </g>
+                <g transform="translate(600,400)">
+                    <rect x="0" y="0" width="20" height="20" fill="#606c38"/>
+                    <path d="M0,0 L10,-10 L20,0 Z" fill="#bc6c25"/>
+                </g>
+                
+                <!-- Flags -->
+                <g transform="translate(200,420)">
+                    <line x1="0" y1="0" x2="0" y2="30" stroke="#999" stroke-width="2"/>
+                    <path d="M0,0 L15,7.5 L0,15" fill="#ff9f1c"/>
+                    <path d="M0,15 L15,22.5 L0,30" fill="#2ec4b6"/>
+                </g>
+                <g transform="translate(800,420)">
+                    <line x1="0" y1="0" x2="0" y2="30" stroke="#999" stroke-width="2"/>
+                    <path d="M0,0 L15,7.5 L0,15" fill="#ff9f1c"/>
+                    <path d="M0,15 L15,22.5 L0,30" fill="#2ec4b6"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Rest of your existing content remains the same -->
+    <div class="middle-container">
+        <div class="profile">
+            <img class="profile-image" src="images/aryan.png" alt="aryan">
+            <h2>Hello.</h2>
+            <p class="intro">Meet Aryan Jain, a coding enthusiast driven by a passion for problem-solving. Through the exploration of full-stack skills, I've discovered the ability to not only address challenges but also create practical and visually appealing web projects.</p>
+        </div>
+
+        <hr class="hr">
+
+        <section class="projects-section">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>AI-Enhanced Precision Oncology</h3>
+                    <p>A CNN model trained on brain MRI images achieving 91% validation accuracy in tumor detection. Implemented using Python, TensorFlow, Keras, and OpenCV.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>OpenCV</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Academic Navigator</h3>
+                    <p>A comprehensive student management system built in C++ utilizing object-oriented programming and data structures. Features include student record management, search functionality, and course tracking.</p>
+                    <div class="tech-stack">
+                        <span>C++</span>
+                        <span>OOP</span>
+                        <span>Data Structures</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI-Code Reviewer</h3>
+                    <p>Built with Python, LLM, and Flask, this tool processes log files through local LLM for error detection and suggestion generation, storing results in SQLite.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQLite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">C++</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">SQL</div>
+                <div class="skill-item">PowerBI</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">Problem Solving</div>
+            </div>
+        </section>
+
+
+        <div id="timeline"></div>
+    </div>
+
+    <div class="bottom-container">
+        <section class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>If you love Brain Storming as much as I do.</p>
+            <a id="contactButton" class="btn" href="#" onclick="openContactModal()">CONTACT ME</a>
+        </section>
+        <a class="footer-link" href="https://www.linkedin.com/in/aryan-jain-0b8544222/">LinkedIn</a>
+        <a class="footer-link" href="https://github.com/aryanjain21">Github</a>
+        <a class="footer-link" href="https://www.instagram.com/_aryanjain_21/">Instagram</a>
+        <p class="copyright">© 2024 Aryan Jain@developer</p>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contact Details</h2>
+            <form id="contactForm" action="process_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
