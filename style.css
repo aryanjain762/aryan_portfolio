@@ -34,6 +34,25 @@
     --moon-color: #f9fafb;
   }
   
+  body.dark-theme {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+/* Ensure text and elements change color properly */
+.dark-theme .navbar, 
+.dark-theme .footer, 
+.dark-theme .card-bg {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+/* Fix button colors */
+.dark-theme #themeToggle {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+}
+
   /* Dark Theme Colors */
   .dark-theme {
     --text-color: var(--text-light);
@@ -75,6 +94,7 @@
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
   }
+
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
@@ -1000,8 +1020,4 @@
   /* Add RGB variants for rgba usage */
   :root {
     --primary-color-rgb: 99, 102, 241;
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> 5c865393021f5d88516413ba600c75dad90ecf22
