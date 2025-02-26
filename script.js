@@ -1,23 +1,28 @@
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
+const icon = themeToggle.querySelector('i');
 
+// Check if dark mode was previously enabled
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-theme');
+    icon.classList.replace('fa-moon', 'fa-sun');
+}
+
+// Toggle dark mode
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
+
     if (body.classList.contains('dark-theme')) {
-        themeToggle.classList.add('fa-sun');
-        themeToggle.classList.remove('fa-moon');
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
     } else {
-        themeToggle.classList.add('fa-moon');
-        themeToggle.classList.remove('fa-sun');
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon');
     }
 });
 
-<<<<<<< HEAD
-// Hamburger Menu 
-=======
-// Hamburger Menu
->>>>>>> 5c865393021f5d88516413ba600c75dad90ecf22
+// Navbar Toggle for Mobile
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -54,8 +59,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 5c865393021f5d88516413ba600c75dad90ecf22
