@@ -4,161 +4,460 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aryan Jain</title>
-    <!-- Keep your existing CSS links -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,500&family=Poppins:ital@1&family=Sacramento&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,500&family=Merriweather:wght@300&family=Poppins:ital@1&family=Sacramento&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&family=Lora:ital@0;1&display=swap" />
 </head>
 <body>
-    <!-- Dark mode toggle button -->
-    <button id="darkModeToggle">
+    <!-- Theme toggle button -->
+    <button id="themeToggle">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Replace your existing top-container with this new hero section -->
-    <div class="hero-section">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">AJ</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">I'm Aryan.</h1>
-            <h2 class="hero-subtitle">a <span>programmer.</span></h2>
+            <h1 class="hero-title">Aryan Jain</h1>
+            <h2 class="hero-subtitle">Software Engineer & <span class="accent">AI Enthusiast</span></h2>
+            <div class="hero-cta">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="#contact" class="btn secondary">Get in Touch</a>
+            </div>
         </div>
         
-        <div class="hero-landscape">
-            <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
-                <!-- Background -->
-                <rect width="100%" height="100%" fill="#0A2F25"/>
+        <div class="hero-visual">
+            <div class="particles-container"></div>
+            <svg class="hero-landscape" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background gradient -->
+                <defs>
+                    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" class="sky-top" />
+                        <stop offset="100%" class="sky-bottom" />
+                    </linearGradient>
+                    <linearGradient id="mountainGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" class="mountain-light" />
+                        <stop offset="100%" class="mountain-dark" />
+                    </linearGradient>
+                    <linearGradient id="mountainGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" class="mountain-light" />
+                        <stop offset="100%" class="mountain-dark" />
+                    </linearGradient>
+                </defs>
                 
-                <!-- Clouds -->
-                <path d="M100,100 C120,90 150,90 170,100 C190,90 220,90 240,100 C240,110 170,110 170,100" fill="white"/>
-                <path d="M900,150 C920,140 950,140 970,150 C990,140 1020,140 1040,150 C1040,160 970,160 970,150" fill="white"/>
+                <!-- Sky -->
+                <rect width="100%" height="100%" fill="url(#skyGradient)"/>
                 
-                <!-- Hills -->
-                <path d="M0,600 Q600,400 1200,600" fill="#40916c"/>
-                <path d="M0,600 Q600,450 1200,600" fill="#2d6a4f"/>
-                <path d="M1000,600 Q1100,500 1200,600" fill="#ffffff"/>
+                <!-- Stars (will be animated with JS) -->
+                <g class="stars"></g>
                 
-                <!-- Trees -->
-                <g transform="translate(300,450)">
-                    <path d="M0,20 L10,-10 L20,20 Z" fill="#95d5b2"/>
-                    <rect x="8" y="20" width="4" height="10" fill="#774936"/>
-                </g>
-                <g transform="translate(500,420)">
-                    <path d="M0,20 L10,-10 L20,20 Z" fill="#ffd166"/>
-                    <rect x="8" y="20" width="4" height="10" fill="#774936"/>
-                </g>
-                <g transform="translate(700,440)">
-                    <path d="M0,20 L10,-10 L20,20 Z" fill="#ff9f1c"/>
-                    <rect x="8" y="20" width="4" height="10" fill="#774936"/>
-                </g>
+                <!-- Moon -->
+                <circle cx="900" cy="150" r="60" class="moon" />
                 
-                <!-- Houses -->
-                <g transform="translate(400,430)">
-                    <rect x="0" y="0" width="20" height="20" fill="#606c38"/>
-                    <path d="M0,0 L10,-10 L20,0 Z" fill="#bc6c25"/>
-                </g>
-                <g transform="translate(600,400)">
-                    <rect x="0" y="0" width="20" height="20" fill="#606c38"/>
-                    <path d="M0,0 L10,-10 L20,0 Z" fill="#bc6c25"/>
-                </g>
+                <!-- Mountains -->
+                <path d="M0,600 L400,250 L800,450 L1200,300 L1200,600 L0,600 Z" fill="url(#mountainGradient1)" class="mountain-back"/>
+                <path d="M0,600 L200,350 L500,500 L800,300 L1100,450 L1200,400 L1200,600 L0,600 Z" fill="url(#mountainGradient2)" class="mountain-front"/>
                 
-                <!-- Flags -->
-                <g transform="translate(200,420)">
-                    <line x1="0" y1="0" x2="0" y2="30" stroke="#999" stroke-width="2"/>
-                    <path d="M0,0 L15,7.5 L0,15" fill="#ff9f1c"/>
-                    <path d="M0,15 L15,22.5 L0,30" fill="#2ec4b6"/>
-                </g>
-                <g transform="translate(800,420)">
-                    <line x1="0" y1="0" x2="0" y2="30" stroke="#999" stroke-width="2"/>
-                    <path d="M0,0 L15,7.5 L0,15" fill="#ff9f1c"/>
-                    <path d="M0,15 L15,22.5 L0,30" fill="#2ec4b6"/>
-                </g>
+                <!-- Foreground hills -->
+                <path d="M0,600 Q300,550 600,570 T1200,550 L1200,600 L0,600 Z" class="hill-back"/>
+                <path d="M0,600 Q400,580 800,590 T1200,570 L1200,600 L0,600 Z" class="hill-front"/>
             </svg>
         </div>
-    </div>
-
-    <!-- Rest of your existing content remains the same -->
-    <div class="middle-container">
-        <div class="profile">
-            <img class="profile-image" src="images/aryan.png" alt="aryan">
-            <h2>Hello.</h2>
-            <p class="intro">Meet Aryan Jain, a coding enthusiast driven by a passion for problem-solving. Through the exploration of full-stack skills, I've discovered the ability to not only address challenges but also create practical and visually appealing web projects.</p>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+    </section>
 
-        <hr class="hr">
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="profile-image-container">
+                    <img class="profile-image" src="images/aryan.png" alt="Aryan Jain">
+                    <div class="profile-image-border"></div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Hello, I'm Aryan</h3>
+                    <p>A coding enthusiast driven by a passion for problem-solving. Through the exploration of full-stack skills, I've discovered the ability to not only address challenges but also create practical and visually appealing web projects.</p>
+                    <p>I specialize in AI/ML solutions and have a knack for transforming complex problems into elegant, user-friendly applications.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">Year Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="projects-section">
-            <h2>My Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="underline"></div>
+            </div>
+            
             <div class="projects-grid">
+
                 <div class="project-card">
-                    <h3>AI-Enhanced Precision Oncology</h3>
-                    <p>A CNN model trained on brain MRI images achieving 91% validation accuracy in tumor detection. Implemented using Python, TensorFlow, Keras, and OpenCV.</p>
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>TensorFlow</span>
-                        <span>OpenCV</span>
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Agro Advisory App</h3>
+                        <p>An AI-powered tool that provides crop recommendations, agrochemical advice, and plant disease analysis based on farm details and images.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>FlaskAPI</span>
+                            <span>LLM</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.linkedin.com/posts/aryan-jain-14717918a_llm-ai-agritech-activity-7296532402439368705-MIKx?utm_source=share&utm_medium=member_desktop&rcm=ACoAACyE4IcBcEu5hUSgJalkV7-JHdPSQKOYGvs" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/aryanjain762/Agro_advisory/tree/main" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Academic Navigator</h3>
-                    <p>A comprehensive student management system built in C++ utilizing object-oriented programming and data structures. Features include student record management, search functionality, and course tracking.</p>
-                    <div class="tech-stack">
-                        <span>C++</span>
-                        <span>OOP</span>
-                        <span>Data Structures</span>
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Code Assistant App</h3>
+                        <p>An AI-driven assistant that helps users debug, explain, and test their code through tailored explanations, quizzes, and challenges.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>NLP</span>
+                            <span>FlaskAPI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.linkedin.com/posts/aryan-jain-14717918a_programmingtips-softwaredevelopment-aiintech-activity-7292887720215883776-tSFQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACyE4IcBcEu5hUSgJalkV7-JHdPSQKOYGvs" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/ashishSharma222003/Code_reviewer/tree/main" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>AI-Code Reviewer</h3>
-                    <p>Built with Python, LLM, and Flask, this tool processes log files through local LLM for error detection and suggestion generation, storing results in SQLite.</p>
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>SQLite</span>
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Enhanced Precision Oncology</h3>
+                        <p>A CNN model trained on brain MRI images achieving 91% validation accuracy in tumor detection. Implemented using Python, TensorFlow, Keras, and OpenCV.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>OpenCV</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Web Dev Projects</h3>
+                        <p>Pair of Web D projects just to showcase my hands on experience with HTML, CSS, JS</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://aryanjain762.github.io/Animation_attempt/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://aryanjain762.github.io/admin_dashboard/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Resume Ranking System</h3>
+                        <p>An AI-based system that extracts key job criteria from descriptions and scores resumes to match candidates with job requirements.</p>
+                        <div class="tech-stack">
+                            <span>NLP</span>
+                            <span>Python</span>
+                            <span>Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=xZTI2iv1_OI" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/aryanjain762/JD-Resume-ranker" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="skills-section">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-item">C++</div>
-                <div class="skill-item">Python</div>
-                <div class="skill-item">SQL</div>
-                <div class="skill-item">PowerBI</div>
-                <div class="skill-item">Machine Learning</div>
-                <div class="skill-item">Problem Solving</div>
+    <!-- Experience Timeline -->
+    <section id="experience" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="underline"></div>
             </div>
-        </section>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Racchabanda</h3>
+                        <span class="timeline-date">Nov 2024 - Present</span>
+                        <p class="timeline-role">Jr. Data Scientist</p>
+                        <p class="timeline-description">Developed a multi-speaker voice transcription and summarization system</p>
+                        <div class="timeline-skills">
+                            <span>Python</span>
+                            <span>GroqAPI</span>
+                            <span>PyAudio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>CodeNamaste</h3>
+                        <span class="timeline-date">Jan 2024 - June 2024</span>
+                        <p class="timeline-role">Data Analyst and Product Dev Intern</p>
+                        <p class="timeline-description">Worked on building the database side of products</p>
+                        <div class="timeline-skills">
+                            <span>SQL</span>
+                            <span>PHP</span>
+                            <span>JS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>AICTE</h3>
+                        <span class="timeline-date">2023</span>
+                        <p class="timeline-role">AWS AIML & Cloud Intern</p>
+                        <p class="timeline-description">Mastered AIML algorithms and managed AWS cloud infrastructure (EC2, S3, Lambda, CloudFront, VPC) for scalable solutions</p>
+                        <div class="timeline-skills">
+                            <span>AWS</span>
+                            <span>AIML</span>
+                            <span>Cloud</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Expertise</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                            <span>PowerBI</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-puzzle-piece"></i></div>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-users"></i></div>
+                            <span>Team Collaboration</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                            <span>Critical Thinking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div id="timeline"></div>
-    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <p class="contact-text">If you're interested in collaborating or have any questions, feel free to reach out!</p>
+            
+            <div class="contact-options">
+                <div class="contact-option">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>aryan07jain@gmail.com</p>
+                </div>
+                
+                <div class="contact-option">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+91 70870-38801</p>
+                </div>
+                
+                <div class="contact-option">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Jaipur, India</p>
+                </div>
+            </div>
+            
+            <button id="contactButton" class="btn primary-light" onclick="openContactModal()">Send Message</button>
+        </div>
+    </section>
 
-    <div class="bottom-container">
-        <section class="contact-section">
-            <h2>Get In Touch</h2>
-            <p>If you love Brain Storming as much as I do.</p>
-            <a id="contactButton" class="btn" href="#" onclick="openContactModal()">CONTACT ME</a>
-        </section>
-        <a class="footer-link" href="https://www.linkedin.com/in/aryan-jain-0b8544222/">LinkedIn</a>
-        <a class="footer-link" href="https://github.com/aryanjain21">Github</a>
-        <a class="footer-link" href="https://www.instagram.com/_aryanjain_21/">Instagram</a>
-        <p class="copyright">© 2024 Aryan Jain@developer</p>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AJ</div>
+                
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/aryan-jain-14717918a/" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/aryanjain762" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_aryanjain_22/" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 Aryan Jain. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeContactModal()">&times;</span>
-            <h2>Contact Details</h2>
-            <form id="contactForm" action="process_form.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit" class="btn">Submit</button>
+            <h2>Send a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn primary">Send Message</button>
             </form>
         </div>
     </div>
