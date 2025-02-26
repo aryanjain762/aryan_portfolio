@@ -13,7 +13,11 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
+<<<<<<< HEAD
 // Hamburger Menu ds
+=======
+// Hamburger Menu
+>>>>>>> 5c865393021f5d88516413ba600c75dad90ecf22
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -50,4 +54,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 5c865393021f5d88516413ba600c75dad90ecf22

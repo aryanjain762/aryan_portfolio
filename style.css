@@ -1000,4 +1000,8 @@
   /* Add RGB variants for rgba usage */
   :root {
     --primary-color-rgb: 99, 102, 241;
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> 5c865393021f5d88516413ba600c75dad90ecf22
