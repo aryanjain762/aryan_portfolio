@@ -14,7 +14,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 <<<<<<< HEAD
-// Hamburger Menu ds
+// Hamburger Menu 
 =======
 // Hamburger Menu
 >>>>>>> 5c865393021f5d88516413ba600c75dad90ecf22
